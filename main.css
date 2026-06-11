@@ -1,0 +1,139 @@
+body {
+  font-size: 18px;
+  font-family: monospace;
+}
+p {
+  padding-left: 80px;
+  max-width: 800px;
+  font-size: 30px;
+  line-height: 1.3;
+
+
+}
+ul {
+    font-family: helvetica;
+}
+
+  #msg {
+    font-family: monospace;
+  }
+  .light-theme {
+    color: #52296a;
+    background: #e5d3fb;
+  }
+  #menu-btn {
+    font-size: 80px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+  }
+  
+  #menu li {
+    margin: 10px 0;
+  }
+  
+  #menu.show {
+    display: block;
+  }
+  h1 {
+    font-size: 60px;
+    color: #3f1f5f;
+    text-align: center;
+}
+.charts {
+  display: flex;
+  gap: 20px;
+}
+
+.charts img {
+  flex: 1;
+  width: 30%;
+  height: auto;
+}
+.resource-section {
+  margin-left: 40px;
+  max-width: 800px;
+}
+
+.resource-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.resource-section a {
+  color: #492468;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+a:link {
+  color: #5b2c7d;
+}
+
+a:visited {
+  color: #5b2c7d;
+}
+
+a:hover {
+  color: #7a4ca5;
+}
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+.profile-photo {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+}
+.about-bio {
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: left;
+}
+.mission-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.mission-text {
+  max-width: 700px;
+}
+
+.mission-section img {
+  width: 350px;
+  height: auto;
+}
+.resources-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  margin: 40px;
+}
+
+.resources-list {
+  max-width: 700px;
+}
+
+.resources-image {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+}
