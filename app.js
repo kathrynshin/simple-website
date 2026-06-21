@@ -1,7 +1,10 @@
-'use strict';
-const menuBtn = document.getElementById('menu-btn');
-const menu = document.getElementById('menu');
 
-menuBtn.addEventListener('click', function () {
-  menu.classList.toggle('show');
+const bars = document.querySelectorAll(".bar div");
+
+bars.forEach((bar) => {
+  const width = bar.getAttribute("data-width");
+
+  setTimeout(() => {
+    bar.style.width = width;
+  }, 300);
 });
