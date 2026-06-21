@@ -1,5 +1,5 @@
 /* =========================
-   Base
+   1. Global Reset
 ========================= */
 
 * {
@@ -8,11 +8,10 @@
 
 body {
   margin: 0;
+  min-height: 100vh;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: 18px;
   color: #2f1b12;
   background: linear-gradient(180deg, #f5ead2, #e3cfaa);
-  min-height: 100vh;
 }
 
 img {
@@ -22,8 +21,8 @@ img {
 
 a {
   color: #5b2c20;
-  text-decoration: none;
   font-weight: bold;
+  text-decoration: none;
 }
 
 a:hover {
@@ -31,78 +30,103 @@ a:hover {
 }
 
 /* =========================
-   Header
+   2. Header / Navigation
 ========================= */
 
 .site-header {
+  height: 115px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 22px 8%;
+  padding: 0 8%;
   border-bottom: 2px solid #8b6f47;
 }
 
 .logo {
+  display: block;
   width: 70px;
+  height: 70px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .menu {
   display: flex;
   gap: 30px;
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .menu a {
   font-size: 18px;
+  color: #5b2c20;
+}
+
+.menu a.active {
+  border-bottom: 2px solid #8b6f47;
+  padding-bottom: 5px;
 }
 
 /* =========================
-   Page Layout
+   3. Page Layout
 ========================= */
 
 .page {
-  width: min(1150px, calc(100% - 40px));
+  width: min(1100px, calc(100% - 40px));
   margin: 0 auto;
-  padding-bottom: 90px;
+  padding-bottom: 80px;
 }
 
 .page-title {
-  font-size: clamp(52px, 9vw, 100px);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+
+  font-size: clamp(48px, 8vw, 90px);
   color: #4b2418;
-  text-align: center;
-  margin: 70px 0 40px;
   letter-spacing: 4px;
+  text-align: center;
   text-transform: uppercase;
 }
 
+/* =========================
+   4. Typography
+========================= */
+
 h2 {
   margin: 0 0 18px;
-  padding-left: 20px;
-  font-size: clamp(28px, 4vw, 36px);
+  padding-left: 18px;
+  font-size: clamp(28px, 3vw, 34px);
   color: #4b2418;
   border-left: 6px solid #9b6a2f;
 }
 
 h3 {
   margin: 0 0 16px;
-  font-size: 24px;
+  font-size: 22px;
   color: #4b2418;
 }
 
 p {
-  margin: 0 0 26px;
-  font-size: clamp(20px, 2.2vw, 27px);
-  line-height: 1.55;
+  margin: 0 0 24px;
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.65;
+}
+
+.small-text {
+  font-size: 14px;
+  color: #7a6042;
 }
 
 /* =========================
-   Shared Cards / Sections
+   5. Shared Sections / Cards
 ========================= */
 
-.card,
-.feature-section {
+.section,
+.card {
   background: linear-gradient(
     180deg,
     rgba(255, 249, 232, 0.95),
@@ -113,73 +137,44 @@ p {
   box-shadow: 0 18px 35px rgba(62, 39, 18, 0.22);
 }
 
-.feature-section {
-  display: flex;
-  align-items: center;
-  gap: 55px;
-  padding: 45px;
-  margin: 0 auto 60px;
+.section {
+  padding: 40px;
+  margin-bottom: 50px;
 }
 
-.feature-section > div {
+.two-column {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+}
+
+.two-column > div {
   flex: 1;
 }
 
-.feature-section img {
-  width: 380px;
+.section-image {
+  width: 360px;
   border-radius: 18px;
   border: 3px solid #8b6f47;
   box-shadow: 0 14px 28px rgba(62, 39, 18, 0.25);
 }
 
-.text-section {
-  margin-bottom: 60px;
-}
-
-.text-section h2 {
-  margin-top: 50px;
-}
-
 /* =========================
-   Stats Section
+   6. Home Stats
 ========================= */
 
-.stats-section {
+.stats-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 60px;
+  gap: 25px;
 }
 
-.stat-card {
-  position: relative;
-  padding: 30px;
-}
-
-.stat-card::before {
-  content: "SPQR";
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  font-size: 13px;
-  letter-spacing: 3px;
-  color: rgba(91, 44, 32, 0.35);
-  font-weight: bold;
-}
-
-.stat-card h3 {
-  border-bottom: 1px solid #b99b68;
-  padding-bottom: 12px;
-}
-
-.responses {
-  font-size: 14px;
-  margin: 10px 0 24px;
-  color: #7a6042;
+.card {
+  padding: 28px;
 }
 
 .bar-row {
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .bar-row span {
@@ -187,11 +182,9 @@ p {
   margin-bottom: 8px;
   font-size: 15px;
   font-weight: bold;
-  color: #3d2619;
 }
 
 .bar {
-  width: 100%;
   height: 16px;
   background: #d8bd85;
   border: 1px solid #9b7a45;
@@ -202,7 +195,6 @@ p {
 .bar div {
   height: 100%;
   background: linear-gradient(90deg, #4b2418, #8f5f2f, #c49a4a);
-  border-radius: 999px;
 }
 
 .bar-row strong {
@@ -212,20 +204,17 @@ p {
   color: #5b2c20;
 }
 
-.pie-card {
+.center-card {
   text-align: center;
 }
 
 .pie {
-  width: 190px;
-  height: 190px;
-  margin: 32px auto;
+  width: 170px;
+  height: 170px;
+  margin: 28px auto;
   border-radius: 50%;
   background: conic-gradient(#6f2f1f 0% 81%, #c9a45c 81% 100%);
   border: 4px solid #9b7a45;
-  box-shadow:
-    inset 0 0 0 12px rgba(255, 249, 232, 0.4),
-    0 12px 25px rgba(62, 39, 18, 0.25);
 }
 
 .legend {
@@ -234,15 +223,14 @@ p {
   gap: 18px;
   flex-wrap: wrap;
   font-weight: bold;
-  color: #3d2619;
 }
 
 .legend b {
   display: inline-block;
   width: 13px;
   height: 13px;
-  border-radius: 50%;
   margin-right: 6px;
+  border-radius: 50%;
   border: 1px solid #6b4f2c;
 }
 
@@ -255,13 +243,13 @@ p {
 }
 
 /* =========================
-   Resources Page
+   7. Resources Page
 ========================= */
 
-.resources-layout {
+.resources-grid {
   display: flex;
   align-items: flex-start;
-  gap: 50px;
+  gap: 40px;
 }
 
 .resources-list {
@@ -269,8 +257,7 @@ p {
 }
 
 .resource-card {
-  padding: 28px;
-  margin-bottom: 25px;
+  margin-bottom: 24px;
 }
 
 .resource-card h2,
@@ -280,68 +267,60 @@ p {
 }
 
 .resource-card ul {
-  list-style: none;
   padding: 0;
   margin: 0;
+  list-style: none;
 }
 
 .resource-card li {
-  margin: 12px 0;
+  margin: 10px 0;
 }
 
 .resource-card a {
   display: block;
-  padding: 12px 15px;
+  padding: 12px 14px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.35);
 }
 
 .resource-card a:hover {
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .side-image {
-  width: 380px;
   position: sticky;
-  top: 40px;
-  border-radius: 20px;
-  border: 3px solid #9b7a45;
-  box-shadow: 0 18px 35px rgba(62, 39, 18, 0.22);
+  top: 30px;
 }
 
 /* =========================
-   Responsive
+   8. Responsive Design
 ========================= */
 
 @media (max-width: 950px) {
-  .feature-section,
-  .resources-layout {
+  .two-column,
+  .resources-grid {
     flex-direction: column;
   }
 
-  .feature-section {
-    text-align: center;
-  }
-
-  .feature-section h2 {
-    text-align: left;
-  }
-
-  .feature-section img,
-  .side-image {
+  .section-image {
     width: 100%;
-    max-width: 420px;
+    max-width: 380px;
     margin: 0 auto;
+  }
+
+  .side-image {
     position: static;
   }
 
-  .stats-section {
+  .stats-grid {
     grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 700px) {
   .site-header {
+    height: auto;
+    padding: 20px;
     flex-direction: column;
     gap: 18px;
   }
@@ -353,21 +332,20 @@ p {
   }
 
   .page {
-    width: min(100% - 28px, 1150px);
+    width: min(100% - 28px, 1100px);
   }
 
   .page-title {
-    margin-top: 45px;
-    font-size: clamp(44px, 14vw, 72px);
+    height: 125px;
+    font-size: clamp(42px, 13vw, 64px);
   }
 
-  .feature-section,
-  .stat-card,
-  .resource-card {
-    padding: 25px;
+  .section,
+  .card {
+    padding: 24px;
   }
 
   p {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
